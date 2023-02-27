@@ -1,12 +1,9 @@
 //Importing the models
-import {getProducts, getProductByID, insertProduct, 
-    updateProductByID, deleteProductByID} 
-
-    from '../models/productModel.js';
+const productModel = require('../models/productModel.js');
 
 //Get all products
-export const showProducts = (req, res) => {
-    getProducts ((err, results) => {
+ const showProducts = (req, res) => {
+    productModel.getProducts ((err, results) => {
         if(err){
             res.send(err);
         } else {
@@ -16,8 +13,8 @@ export const showProducts = (req, res) => {
 }
 
 //Get single product
-export const showProductById = (req, res) => {
-    getProductById (req.params.id, (err, results) => {
+ const showProductById = (req, res) => {
+    productModel.getProductById (req.params.id, (err, results) => {
         if (err){
             res.send(err);
         }else{
@@ -27,9 +24,9 @@ export const showProductById = (req, res) => {
 };
 
 //Insert new product
-export const createProduct = (req, res) => {
+ const createProduct = (req, res) => {
     const data = req.body;
-    insertProduct(data, (err, results) => {
+    productModel.insertProduct(data, (err, results) => {
         if (err){
             res.send(err);
         }else{
@@ -39,10 +36,10 @@ export const createProduct = (req, res) => {
 }
 
 // Update Product
-export const updateProduct = (req, res) => {
+const updateProduct = (req, res) => {
     const data  = req.body;
     const id    = req.params.id;
-    updateProductById(data, id, (err, results) => {
+    productModel.updateProductById(data, id, (err, results) => {
         if (err){
             res.send(err);
         }else{
@@ -52,9 +49,9 @@ export const updateProduct = (req, res) => {
 }
   
 // Delete Product
-export const deleteProduct = (req, res) => {
+const deleteProduct = (req, res) => {
     const id = req.params.id;
-    deleteProductById(id, (err, results) => {
+    productModel.deleteProductById(id, (err, results) => {
         if (err){
             res.send(err);
         }else{
@@ -62,3 +59,5 @@ export const deleteProduct = (req, res) => {
         }
     });
 }
+
+module.exports = {showProducts, showProductById, createProduct, updateProduct, deleteProduct};

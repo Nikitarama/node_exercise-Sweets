@@ -1,26 +1,83 @@
-// import express
-const express = require("express");
-// import cors
-const cors = require("cors");
- 
+const express = require('express');
+
+const path = require('path');
+
+const cors = require('cors');
+
+const db = require('./config');
+
 const bodyParser = require('body-parser');
- 
-// import routes
-const Router = require("./routes/routes.js");
-  
-// init express
+
+const port = parseInt(process.env.port) || 4000;
+
 const app = express();
-  
-// use express json
-app.use(express.json());
-  
-// use cors
-app.use(cors());
- 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-  
-// use router
-app.use(Router);
-  
-app.listen(5000, () => console.log('Server running at http://localhost:5000'));
+
+const route = express.Router();
+
+const {errorHandling} = require('./middleware/ErrorHandling');
+
+const cookieParser = require('cookie-parser');
+
+app.use((req, res, next)=> {
+    res.header('Access-Control-Allow-Origin', 'http://localhost:8080')
+    res.header("Access-Control-Allow-Credentials", "true")
+    res.header("Access-Control-Allow-Methods", "*")
+    res.header("Access-Control-Allow-Headers", "*")
+    next();
+});
+
+app.use( 
+    route,
+    cors({
+        origin: ['http://127.0.0.1:8080', 
+        'http://localhost:8080'],
+        credentials: true
+    }),
+    cookieParser(),
+    express.json,
+    bodyParser.urlencoded( {extended: false} )
+)
+
+route.get('^/$|/Sweets', (req, res)=>{
+    res.status(200).sendFile(path.join(__dirname, './view/index.html'));
+})
+
+route.get('/Sweets', (req, res)=>{
+    const strQry =
+    `
+    SELECT sweetID, name, descript, price
+    FROM Sweets;
+    `;
+
+    db.query(strQry, (err, data)=>{
+        if(err) throw err;
+        res.status(200).json( {result: data} );
+    })
+});
+
+route.delete('/', (req, res) => {
+    console.log(req.params);
+    return res.json({
+        message: 'DELETE'
+    }) 
+});
+
+route.put('user/:id', bodyParser.json(), (req, res) => {
+    let data = req.body;
+    const strQry =
+    `
+    update Sweets
+    set ?
+    where sweetID = ?;
+    `;
+db.query(strQry, [data, req.params.id],
+    (err)=>{
+        if(err) throw err;
+        res.status(200).json( {msg:
+        "a row was affected"});
+    })
+});
+
+app.listen(port, ()=>{
+    console.log(`server is running at port ${port}`)
+});
