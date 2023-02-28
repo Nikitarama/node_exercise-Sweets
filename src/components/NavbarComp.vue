@@ -1,35 +1,10 @@
 <template>
-    <!-- <ul class="nav">
-  <li class="nav-item">
-    <router-link to="/">Home
-
-    </router-link> | 
-
-    <a class="nav-link active" aria-current="page" href="#">Active</a>
-  </li>
-  <li class="nav-item">
-    <router-link to="/about">About
-
-    </router-link> |
-
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <router-link to="/admin">Admin
-
-    </router-link> |
-
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link disabled">Disabled</a>
-  </li>
-</ul> -->
+    
   <div class="nav justify-content-start">
-    <img src="https://i.postimg.cc/13wd1TXf/LOGO-Sweet-NC.png" style="width:200px;">
+    <img src="https://i.postimg.cc/13wd1TXf/LOGO-Sweet-NC.png" style="width:200px; padding-top:10px;">
   </div>
 
-<ul class="nav justify-content-center">
+<ul class="nav justify-content-end">
     
   <li class="nav-item">
     <router-link to="/"> Home
@@ -38,17 +13,25 @@
     
   </li>
   <li class="nav-item">
-    <router-link to="/about"> About
+    <router-link to="/admin"> Admin
 
 </router-link> | 
     
   </li>
   <li class="nav-item">
-    <router-link to="/admin"> Admin
+    <router-link to="/products"> Cakes
       
 </router-link> |
     
   </li>
+  
+  <li class="nav-item">
+    <router-link to="/contact"> Contact
+      
+</router-link> |
+    
+  </li>
+  
 </ul>
 
 
@@ -70,17 +53,27 @@
 }
 
 .nav-item {
-  padding-right: 30px;
-  margin-bottom: 30px;
-  
+  padding-right: 50px;
+  margin-bottom: 10px;
+  padding-top: -110px;
+  margin-left: 100px;
+  font-size: 18px;
+  font-weight: bold;
 }
 
+.nav a {
+  color: antiquewhite;
+  text-decoration: none;
+  font-family:  Georgia, "Times New Roman", Times, serif;
+}
+
+.nav-item hover:a {
+  color: palevioletred;
+}
 
 .nav {
   color:antiquewhite;
-  text-decoration: none;
-  list-style: none;
-
+  
 }
 
 .nav {
