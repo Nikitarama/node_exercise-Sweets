@@ -27,6 +27,7 @@
       </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+    
   </div>
   <div class="about" id="ab">
     <img src="https://i.postimg.cc/sgXXkrmJ/ab.jpg" />
@@ -192,7 +193,7 @@ span.cursor.typing {
   height: 50vh;
   top: 99rem;
   left: 80px;
-  padding: 20px;
+  padding: 60px;
   color: black;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-style: italic;
