@@ -65,6 +65,8 @@
   color: antiquewhite;
   text-decoration: none;
   font-family:  Georgia, "Times New Roman", Times, serif;
+  font-size: 22px;
+
 }
 
 .nav-item hover:a {
@@ -73,11 +75,11 @@
 
 .nav {
   color:antiquewhite;
-  
 }
 
 .nav {
   background-color: #be8a62;
+  height:85px;
   
 }
 

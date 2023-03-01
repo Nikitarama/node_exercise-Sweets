@@ -1,6 +1,6 @@
 <template>
     <div> <footer>
-        <div class="footer-top">
+        <div class="footer-top ">
             <div class="container">
                 <div class="footer-day-time">
                     <div class="row">
@@ -51,6 +51,7 @@
 footer {
     color: #fff;
     font-family:  Georgia, "Times New Roman", Times, serif;
+
 }
 ul {
     padding: 0px;
@@ -96,10 +97,7 @@ ol, ul {
 footer p {
   margin-bottom:0;
 }
-.footer-logo {
-    display: block;
-    margin-bottom: 32px;
-}
+
 .address1 li {
     list-style: none;
     position: relative;
