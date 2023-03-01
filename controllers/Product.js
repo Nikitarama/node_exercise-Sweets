@@ -60,4 +60,48 @@ const deleteProduct = (req, res) => {
     });
 }
 
+
 module.exports = {showProducts, showProductById, createProduct, updateProduct, deleteProduct};
+
+
+route.get('/sweets', (req, res)=>{
+    const strQry =
+    `
+    SELECT ID, prodName, prodDescription, category, price, prodQuantity, imgURL, userID
+    FROM Products;
+    `;
+
+    db.query(strQry, (err, data)=>{
+        if(err) throw err;
+        res.status(200).json( {result: data} );
+    })
+});
+
+route.delete('/', (req, res) => {
+    console.log(req.params);
+    return res.json({
+        message: 'DELETE'
+    }) 
+});
+
+route.put('user/:id', bodyParser.json(), (req, res) => {
+    let data = req.body;
+    const strQry =
+    `
+    update Sweets
+    set ?
+    where sweetID = ?;
+    `;
+db.query(strQry, [data, req.params.id],
+    (err)=>{
+        if(err) throw err;
+        res.status(200).json( {msg:
+        "a row was affected"});
+    })
+});
+
+route.get('^/$|/', (req, res)=>{
+    res.status(200).sendFile(path.join(__dirname, './view/index.html'));
+})
+
+module.exports = route;

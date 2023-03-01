@@ -204,8 +204,8 @@ SELECT
 // }
 // Export User class
 module.exports = {
-    User, 
-    // Product
+    User 
+    // , Product
 }
 
 
