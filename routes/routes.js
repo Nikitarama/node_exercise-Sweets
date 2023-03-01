@@ -1,26 +1,27 @@
 // import express
+const bodyParser = require("body-parser");
 const express = require("express");
   
 // import function from controller
-const productController = require("../controllers/product.js");
+const {showProducts, showProductById, createProduct, updateProduct, deleteProduct} = require("../controllers/product.js");
   
 // init express router
 const router = express.Router();
   
 // Get All Product
-router.get('/products', productController.showProducts);
+router.get('/products', showProducts);
   
 // Get Single Product
-router.get('/products/:id', productController.showProductById);
+router.get('/products/:id', bodyParser.json(), showProductById);
   
 // Create New Product
-router.post('/products', productController.createProduct);
+router.post('/products', bodyParser.json(), createProduct);
   
 // Update Product
-router.put('/products/:id', productController.updateProduct);
+router.put('/products/:id', bodyParser.json(), updateProduct);
   
 // Delete Product
-router.delete('/products/:id', productController.deleteProduct);
+router.delete('/products/:id', deleteProduct);
 
 
 

@@ -9,13 +9,11 @@ let { createToken } = require("../middleware/AuthenticatedUser");
 class User {
   login(req, res) {
     const { emailAdd, userPass } = req.body;
-    const strQry = `
-        SELECT 
+    const strQry = `SELECT 
     userID,firstName,lastName,gender,emailAdd,userRole,UserProfile
     FROM Users
-    WHERE emailAdd =$ {emailAdd};
-`;
-    db.query(strQry, async (err, data) => {
+    WHERE emailAdd = ?`;
+    db.query(strQry, [emailAdd], async (err, data) => {
       if (err) throw err;
       if (!data || data == null) {
         res.status(401).json({ err: "You provided the wrong email address" });
@@ -203,10 +201,7 @@ SELECT
 
 // }
 // Export User class
-module.exports = {
-    User 
-    // , Product
-}
+
 
 
 //EACH TABLE NEEDS A CLASS WITH THE FUNCTIONS INSIDEn 

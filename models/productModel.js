@@ -2,7 +2,7 @@ const db = require("../config/index.js");
 
 //Get all products
  const getProducts = (result) => {
-    db.query("SELECT * FROM product", (err, results) => {             
+    db.query("SELECT * FROM Products", (err, results) => {             
         if(err) {
             console.log(err);
             result(err, null);
@@ -13,7 +13,7 @@ const db = require("../config/index.js");
 }
 
  const getProductById = (id, result) => {
-    db.query("SELECT * FROM product WHERE product_id = ?", [id], (err, results) => {             
+    db.query("SELECT * FROM Products WHERE ID = ?", [id], (err, results) => {             
         if(err) {
             console.log(err);
             result(err, null);
@@ -25,7 +25,7 @@ const db = require("../config/index.js");
   
 // Insert Product to Database
 const insertProduct = (data, result) => {
-    db.query("INSERT INTO product SET ?", [data], (err, results) => {             
+    db.query("INSERT INTO Products SET ?", [data], (err, results) => {             
         if(err) {
             console.log(err);
             result(err, null);
@@ -37,7 +37,7 @@ const insertProduct = (data, result) => {
   
 // Update Product to Database
  const updateProductById = (data, id, result) => {
-    db.query("UPDATE product SET product_name = ?, product_price = ? WHERE product_id = ?", [data.product_name, data.product_price, id], (err, results) => {             
+    db.query("UPDATE Products SET ? WHERE ID = ?", [data, id], (err, results) => {             
         if(err) {
             console.log(err);
             result(err, null);
@@ -49,7 +49,7 @@ const insertProduct = (data, result) => {
   
 // Delete Product to Database
  const deleteProductById = (id, result) => {
-    db.query("DELETE FROM product WHERE product_id = ?", [id], (err, results) => {             
+    db.query("DELETE FROM Products WHERE ID = ?", [id], (err, results) => {             
         if(err) {
             console.log(err);
             result(err, null);
