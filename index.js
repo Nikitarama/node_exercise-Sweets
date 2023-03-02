@@ -22,6 +22,7 @@ app.use((req, res, next)=> {
     next();
 });
 
+
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.json());
@@ -38,4 +39,4 @@ app.listen(port, ()=>{
     console.log(`server is running at port ${port}`)
 });
 
-// app.use(errorHandling)
+app.use(errorHandling)
