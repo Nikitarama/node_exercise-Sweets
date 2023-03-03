@@ -44,6 +44,7 @@
   width: 60rem;
   background-color: grey;
   padding: 20px;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 .form-text {
   color: lightgoldenrodyellow;

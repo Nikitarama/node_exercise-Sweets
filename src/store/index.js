@@ -28,11 +28,10 @@ export default createStore({
   actions: {
     async fetchUsers (context){
       const res= await axios.get (`${sweetURL}users`);
-      const {result,err}= await res.data;
-      if (result){
-        context.commit('setUsers',result)
+      if (res.data){
+        context.commit('setUsers',res.data)
       } else {
-        context.commit('setMessage',err)
+        context.commit('setMessage', 'An error occurred')
       }
   },
     async fetchProducts (context){
