@@ -186,8 +186,8 @@ span.cursor.typing {
   background-color: #F3F0ED;
   position: absolute;
   width: 50%;
-  height: 52vh;
-  top: 92rem;
+  height: 50vh;
+  top: 99rem;
   left: 80px;
   padding: 60px;
   color: black;
