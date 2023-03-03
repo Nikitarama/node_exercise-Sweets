@@ -4,7 +4,7 @@
       <h2 class="head">Contact Us</h2>
       <p class="descrip">Since our opening, we have become masters of our craft, our commitment to quality products,exceptional services and incomparable customers care keep our community coming back again and again. If you would like to know more details on our company, please don't hesitate to contact us by filling in the contact form below and we'll promptly get back to you</p>
 
-      <form action="" class="forms">
+      <form action="https://formspree.io/f/mleknwqv" class="forms" method="post">
       <div class="mb-3">
         <p class="contacts">info@sweetyNC@gmail.com
         </p>
@@ -13,13 +13,14 @@
 
       </div>
       <div class="mb-3">
-        <label for="exampleName" class="form-labels">Full Name: </label>
-        <input type="text" class="form-controls" id="exampleInputPassword1">
+        <label for="exampleName" class="form-labels" name="username" required>Full Name: </label>
+        <input type="text" class="form-controls" id="exampleInputPassword1" name="username" required>
       </div>
       <div class="mb-3">
         <label for="exampleInputPassword1" class="form-labels">Email:</label>
         <input type="text" class="form-controls" id="exampleInputPassword1">
       </div>
+      <button>Submit</button>
       </form>
     </div>
 
@@ -59,7 +60,14 @@
 .descrip{
   margin-right:60px;
   
-
+}
+button {
+  background-color: tan;
+  border-radius: 5px;
+  border-color: tan;
+  padding: 1px;
+  margin-left: 200px;
+  margin-right: 200px;
 }
 
 

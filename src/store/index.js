@@ -28,9 +28,9 @@ export default createStore({
   actions: {
     async fetchUsers (context){
       const res= await axios.get (`${sweetURL}users`);
-      const {results,err}= await res.data;
-      if (results){
-        context.commit('setUsers',results)
+      const {result,err}= await res.data;
+      if (result){
+        context.commit('setUsers',result)
       } else {
         context.commit('setMessage',err)
       }

@@ -34,3 +34,23 @@
       </form>
     </div>
 </template>
+
+<style scoped>
+.form {
+  margin-top: 100px;
+  margin-left: 300px;
+  margin-bottom: 100px;
+  color: lightsteelblue;
+  width: 60rem;
+  background-color: grey;
+  padding: 20px;
+}
+.form-text {
+  color: lightgoldenrodyellow;
+}
+.form h3 {
+  font-size: 50px;
+  color: lightgoldenrodyellow;
+  margin-left: 50px;
+}
+</style>

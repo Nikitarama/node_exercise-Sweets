@@ -7,9 +7,9 @@
                 <tr>
                     <th>#</th>
                     <th>Name</th>
-                    <th>Year</th>
+                    <th>Category</th>
                     <th>Price</th>
-                    <th>Action</th>
+                    <th>Image</th>
                     </tr>
             </thead>
             <tbody>
@@ -18,14 +18,21 @@
                     <td>{{product.prodName}}</td>
                     <td>{{product.prodDescription}}</td>
                     <td>R{{product.price}}</td>
-                    <td><button id="{{product.id}}" class="btn btn-danger">Delete</button></td>
+                    <td><img
+          :src="product.imgURL"
+          class="card-img-top"
+          alt="..."
+          style="width:55px; height:60px"
+        /></td>
+                    <td><button id="{{product.ID}}" class="btn btn-danger">Delete</button></td>
+                    <td><button id="{{product.ID}}" class="btn btn-success">Edit</button></td>
                 </tr>
             </tbody>
         </table>
     </td>
 
     <br>
-    
+    <h1>User Profile</h1>
     <td>
         <table class="userlist" id="userList">
             <thead>
@@ -74,3 +81,11 @@ export default {
 };
 
 </script>
+
+<style scoped>
+
+.list, .userlist{
+    width: 90rem;
+}
+
+</style>

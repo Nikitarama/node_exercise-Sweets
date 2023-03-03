@@ -62,7 +62,6 @@
   font-style:italic;
   width: 55rem;
   background-color: rgb(97, 112, 128);
-  border-radius: 25px;
 }
 
 .form-text {

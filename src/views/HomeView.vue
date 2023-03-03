@@ -7,12 +7,39 @@
         <span class="cursor" :class="{ typing: typeStatus }">&nbsp;</span>
       </h1>
       <h3>A Delicious Delight You'll Love</h3>
-      <button class="buy-button">Buy now</button>
+      <button class="login"><router-link to="/login"> Login
+</router-link></button> <button class="register"><router-link to="/register"> Create An Account
+</router-link></button>
     </div>
     <div>
+      <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" >
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="https://i.postimg.cc/7P9TVxcw/carrot-cake.jpg" style="height:550px;" class="d-block rounded mx-auto d-block w-75" alt="CapeTown">
+                  </div>
+                  <div class="carousel-item" data-bs-interval="2000">
+                    <img src="https://i.postimg.cc/X7wP8fzB/Tiramisu-8s-1.jpg" style="height:550px;" class="d-block rounded mx-auto d-block w-75" alt="...">
+                  </div>
+                  <div class="carousel-item" data-bs-interval="2000">
+                    <img src="https://i.postimg.cc/9QD72bHr/Simply-Recipes-Perfect-Cheesecake-LEAD-6-97a8cb3a60c24903b883c1d5fb5a69d3.jpg" style="height:550px;" class="d-block rounded mx-auto d-block w-75" alt="...">
+                  </div>
+                  <div class="carousel-item" data-bs-interval="2000">
+                    <img src="https://i.postimg.cc/HxmGH6Rm/60564-Strawberry-Cake-From-Scratch-ddfms-4-X3-0291-1-cd8254e28ea14112b5fc49e25cd08ff6.jpg" style="height:550px;" class="d-block rounded mx-auto d-block w-75" alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+</div>
+  </div>
 
     </div>
-  </div>
+  
 
   <div class="about" id="ab">
     <img src="https://i.postimg.cc/sgXXkrmJ/ab.jpg" />
@@ -84,80 +111,58 @@ export default {
 
 <style scoped>
 .body {
-  background: url("https://i.postimg.cc/C5jfF6M7/brownie-gc671efb18-1920.jpg")
-    no-repeat;
+  background: url("https://i.postimg.cc/C5jfF6M7/brownie-gc671efb18-1920.jpg") no-repeat;
   background-size: cover;
   background-position: center;
   min-height: 180vh;
   background-color: black;
   margin: 0;
   padding: 0;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family:  Georgia, "Times New Roman", Times, serif;
 }
-
 .introduction {
-  color: antiquewhite;
+  color:antiquewhite;
   padding-top: 200px;
 }
-
 .introduction h1 {
   font-size: 70px;
 }
-
-.buy-button {
-  border-radius: 30px;
+button a {
+  text-decoration: none;
+  color: grey;
+}
+.login, .register {
+  margin-top: 50px;
+  margin-left: 50px;
+  border-radius: 10px;
   padding: 8px;
-  border-color: white;
+  border: 2px solid pink;
+  background-color: antiquewhite;
 }
-
-button:hover {
-  background-color: rgb(186, 59, 80);
-  border-color: rgb(186, 59, 80);
+button:hover{
+  background-color: pink;
 }
-
-.btn {
-  background-color: purple;
-  border-color: purple;
-}
-
 span.cursor {
   display: inline-block;
   animation: cursorBlink 1s infinite;
 }
-
 span.cursor.typing {
   animation: none;
 }
-
 @keyframes cursorBlink {
-  49% {
-    background-color: #fff;
-  }
-  50% {
-    background-color: transparent;
-  }
-  99% {
-    background-color: transparent;
-  }
+  49% { background-color: #fff; }
+  50% { background-color: transparent;}
+  99% { background-color: transparent;}
 }
-
-.form {
-  margin-top: 340px;
-  margin-left: 300px;
-  color: lightsteelblue;
-  width: 55rem;
+.carousel {
+  margin-top: 100px;
+  margin-left: 130px;
+  height: 300px;
+  width: 80rem;
 }
-
-.form-text {
-  color: lightgoldenrodyellow;
+.carousel button {
+  top: 300px;
 }
-
-.form h3 {
-  font-size: 50px;
-  color: lightgoldenrodyellow;
-  margin-left: 50px;
-}
-
 .about img {
   height: 450px;
   width: 32rem;
@@ -165,7 +170,7 @@ span.cursor.typing {
   margin-top: 50px;
 }
 #ab {
-  background-color: #af804f;
+  background-color: #AF804F;
   height: 85vh;
 }
 .about h1 {
@@ -178,11 +183,11 @@ span.cursor.typing {
   text-decoration: underline;
 }
 .text-block {
-  background-color: #f3f0ed;
+  background-color: #F3F0ED;
   position: absolute;
   width: 50%;
   height: 50vh;
-  top: 97rem;
+  top: 99rem;
   left: 80px;
   padding: 60px;
   color: black;
@@ -193,4 +198,5 @@ span.cursor.typing {
 .about h4 {
   font-size: 18px;
 }
+
 </style>
