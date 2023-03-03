@@ -17,7 +17,10 @@
         <div class="card-body">
           <p class="name">{{ product.prodName }}</p>
           <p class="price">R{{ product.price }}</p>
-          <button class="view" href="#">View Details</button>
+          <!-- <RouterLink> -->
+
+            <button class="view" href="#">View Details</button>
+          <!-- </RouterLink> -->
         </div>
       </div>
     </div>
@@ -45,7 +48,7 @@ export default {
     background-size: cover;
     height: 230vh;
     background-color: #F5F5F5;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.6); */
 }
 .card {
     margin-bottom: 40px;

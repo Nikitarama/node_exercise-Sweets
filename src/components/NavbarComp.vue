@@ -19,7 +19,7 @@
     
   </li>
   <li class="nav-item">
-    <router-link to="/products"> Products
+    <router-link to="/products"> Cakes
       
 </router-link> |
   </li>
@@ -89,7 +89,7 @@
 
 .nav {
   background-color: #be8a62;
-  height:85px;
+  height:6rem;
   
 }
 

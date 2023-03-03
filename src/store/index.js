@@ -1,6 +1,6 @@
 import { createStore } from 'vuex'
 import axios from 'axios';
-const sweetURL='https://localhost:3200/'; //from render.com
+const sweetURL='https://node-eomp.onrender.com/'; //from render.com
 export default createStore({
   state: {
     users:null,
@@ -37,9 +37,9 @@ export default createStore({
   },
     async fetchProducts (context){
       const res= await axios.get(`${sweetURL}products`);
-      const {results,err}= await res.data;
-      if (results){
-        context.commit('setProducts',results)
+      const {result,err}= await res.data;
+      if (result){
+        context.commit('setProducts',result)
       } else {
         context.commit('setMessage',err)
       }

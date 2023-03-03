@@ -8,7 +8,7 @@ const routes = [
     component: HomeView
   },
   {
-    // path: '/admin',
+    path: '/admin',
     name: 'admin',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
@@ -19,6 +19,11 @@ const routes = [
     path: '/products',
     name: 'products',
     component: () => import('../views/ProductsView.vue')
+  },
+  {
+    path: '/product:id',
+    name: 'singprod',
+    component: () => import('../views/SingleProdView.vue')
   },
   {
     path: '/register',
