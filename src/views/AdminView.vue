@@ -1,6 +1,6 @@
 <template>
 
-    <h1>Admin Page</h1>
+<h1>Admin Page</h1>
     <td>
         <table class="list" id="adminList">
             <thead>
@@ -9,23 +9,18 @@
                     <th>Name</th>
                     <th>Year</th>
                     <th>Price</th>
-                    <th>Action</th> 
-                    </tr> 
+                    <th>Quantity</th>
+                    </tr>
             </thead>
             <tbody>
-
-            </tbody> 
+                <tr>
+                    <td>{{parseInt([storeIndex]) + 1}}</td>
+                    <td>{{product.prodName}}</td>
+                    <td>{{product.prodDescription}}</td>
+                    <td>R{{product.price}}</td>
+                    <td><button id="{{product.ID}}" class="btn btn-danger">Delete</button></td>
+                </tr>
+            </tbody>
         </table>
     </td>
 </template>
-
-
-
-<script>
-</script>
-
-
-
-<style scoped> 
-
-</style>

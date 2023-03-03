@@ -19,7 +19,17 @@
     
   </li>
   <li class="nav-item">
-    <router-link to="/products"> Cakes
+    <router-link to="/products"> Products
+      
+</router-link> |
+  </li>
+  <li class="nav-item">
+    <router-link to="/register"> Register
+      
+</router-link> |
+  </li>
+  <li class="nav-item">
+    <router-link to="/login"> Login
       
 </router-link> |
     
@@ -53,11 +63,11 @@
 }
 
 .nav-item {
-  padding-right: 50px;
+  padding-right: 40px;
   margin-bottom: 10px;
   padding-top: -110px;
-  margin-left: 100px;
-  font-size: 18px;
+  margin-left: 30px;
+  font-size: 25px;
   font-weight: bold;
 }
 
@@ -65,7 +75,7 @@
   color: antiquewhite;
   text-decoration: none;
   font-family:  Georgia, "Times New Roman", Times, serif;
-  font-size: 22px;
+  font-size: 20px;
 
 }
 
